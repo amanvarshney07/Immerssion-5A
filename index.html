@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Product Catalog</h1>
+
+  <div class="controls">
+    <input type="text" id="searchInput" placeholder="Search for products...">
+    <button onclick="searchProducts()">Search</button>
+
+    <select id="brandSelect" onchange="applyFilters()">
+      <option value="">All Brands</option>
+      <!-- Brands will be populated dynamically -->
+    </select>
+
+    <input type="number" id="minPrice" placeholder="Min Price" min="0" onchange="applyFilters()">
+    <input type="number" id="maxPrice" placeholder="Max Price" min="0" onchange="applyFilters()">
+
+    <select id="sortSelect" onchange="sortProducts()">
+      <option value="">-- Sort By</option>
+      <option value="price-asc">Price: Low to High</option>
+      <option value="price-desc">Price: High to Low</option>
+      <option value="rating-asc">Rating: Low to High</option>
+      <option value="rating-desc">Rating: High to Low</option>
+    </select>
+  </div>
+
+  <div id="productsContainer"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
